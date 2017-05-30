@@ -1,9 +1,9 @@
 {
-  "name": "p-break",
+  "name": "promise-break",
   "version": "0.1.0",
   "description": "Break out of a promise chain",
   "license": "MIT",
-  "repository": "sindresorhus/p-break",
+  "repository": "danielkalen/promise-break",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",

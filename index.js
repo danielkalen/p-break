@@ -7,6 +7,13 @@ class EndBreakError extends Error {
 	}
 }
 
-module.exports = val => Promise.reject(new EndBreakError(val));
+module.exports = function (val) {
+	throw new EndBreakError(val);
+};
 
-module.exports.end = err => err instanceof EndBreakError ? err.value : Promise.reject(err);
+module.exports.end = function (err) {
+	if (err instanceof EndBreakError)
+		return err.value;
+	
+	throw err;
+};

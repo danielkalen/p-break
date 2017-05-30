@@ -1,4 +1,4 @@
-# p-break [![Build Status](https://travis-ci.org/sindresorhus/p-break.svg?branch=master)](https://travis-ci.org/sindresorhus/p-break)
+# promise-break [![Build Status](https://travis-ci.org/sindresorhus/p-break.svg?branch=master)](https://travis-ci.org/sindresorhus/p-break)
 
 > Break out of a promise chain
 
@@ -11,7 +11,7 @@ See ["How do I break out of a promise chain?"](https://github.com/sindresorhus/p
 ## Install
 
 ```
-$ npm install --save p-break
+$ npm install --save promise-break
 ```
 
 
@@ -20,7 +20,7 @@ $ npm install --save p-break
 Here the `onlyRunConditional` promises are skipped if `conditional` is falsy:
 
 ```js
-const pBreak = require('p-break');
+const pBreak = require('promise-break');
 
 alwaysRun1()
 	.then(() => alwaysRun2())
