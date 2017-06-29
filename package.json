@@ -1,6 +1,6 @@
 {
   "name": "promise-break",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Break out of a promise chain",
   "license": "MIT",
   "repository": "danielkalen/promise-break",
