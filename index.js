@@ -8,12 +8,17 @@ class EndBreakError extends Error {
 }
 
 module.exports = function (val) {
-	throw new EndBreakError(val);
+	var err = new EndBreakError(val);
+	if (!(err instanceof EndBreakError)) {
+		err.__proto__ = EndBreakError.prototype;
+	}
+	throw err;
 };
 
 module.exports.end = function (err) {
-	if (err instanceof EndBreakError)
+	if (err instanceof EndBreakError) {
 		return err.value;
-	
+	}
+
 	throw err;
 };
