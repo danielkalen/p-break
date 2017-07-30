@@ -1,22 +1,19 @@
 'use strict';
 
-class EndBreakError extends Error {
-	constructor(value) {
-		super();
-		this.value = value;
-	}
+function createEndBreak(value) {
+	var instance = Object.create(Error.prototype);
+	instance.value = value;
+	instance.__isEndBreak = true;
+	return instance;
 }
 
 module.exports = function (val) {
-	var err = new EndBreakError(val);
-	if (!(err instanceof EndBreakError)) {
-		err.__proto__ = EndBreakError.prototype;
-	}
+	var err = createEndBreak(val);
 	throw err;
 };
 
 module.exports.end = function (err) {
-	if (err instanceof EndBreakError) {
+	if (err.__isEndBreak) {
 		return err.value;
 	}
 
